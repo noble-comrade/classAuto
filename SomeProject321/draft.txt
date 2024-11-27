@@ -1,0 +1,50 @@
+string pathToRead = "C:\\Users\\prdb\\Desktop\\SomeProject321\\INPUT.txt";
+StreamReader Reader = new StreamReader(pathToRead);
+string pathToWrite = "C:\\Users\\prdb\\Desktop\\SomeProject321\\OUTPUT.txt";
+StreamWriter Writer = new StreamWriter(pathToWrite);
+
+// ---- Инициализация ---- \\
+string[] start = { "69", "3" };
+int n = Convert.ToInt32(start[0]); 
+int k = Convert.ToInt32(start[1]);
+
+//Console.Write($"{n} = ");
+
+n = n / k;
+string gg = $"{n}";
+double nn = n % k;
+
+List<string> List = new List<string>();
+List<double> Answer = [];
+
+for (int i = gg.Length-1; i >= 0; i--) List.Add($"{gg[i]}");
+
+// ---- Основной блок кода ---- \\
+for (int i = 0; i < List.Count(); i++)
+{
+    int count = Convert.ToInt32(List[i]);
+    while (count != 0)
+    {
+        double res = k * Math.Pow(10, i);
+        Answer.Add(res);
+        count--;
+    }
+}
+if (nn != 0) // деление остатка
+{
+    nn /= k*Math.Pow(10, -1);
+}
+for (int i = 0; i < Answer.Count(); i++) 
+{
+    int count = Convert.ToInt32(List[i]);
+    if (Answer[i] == count) 
+    {
+        123
+    }
+}
+/*
+// ---- Вывод ---- \\
+foreach (double s in Answer) Console.Write($" {s}");
+*/
+
+Console.WriteLine(List[0] + k);
